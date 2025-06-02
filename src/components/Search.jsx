@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Search = () => {
-  return (
-    <div className='text-white text-3xl'>Search</div>
-  )
-}
+    const [searchInput, setSearchInput] = useState("");
 
-export default Search
+    return (
+        <>
+            <div className="search">
+                <div>
+                    <img src="search.svg" alt="Search Icon" />
+                    <input
+                        type="text"
+                        placeholder="Search for movies..."
+                        value={searchInput}
+                        onChange={(e) => {
+                            setSearchInput(e.target.value);
+                        }}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Search;
